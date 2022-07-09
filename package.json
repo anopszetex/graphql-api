@@ -1,8 +1,31 @@
 {
+  "name": "graphql-api",
+  "version": "1.0.0",
+  "author": "Andre Luiz <andre.1357.luis@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">16.0.0 <17.0.0"
+  },
+  "homepage": "https://github.com/anopszetex/graphql-api#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anopszetex/graphql-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anopszetex/graphql-api/issues"
+  },
   "devDependencies": {
     "eslint": "^8.19.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.5.0",
     "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "apollo-server": "^3.9.0",
+    "graphql": "^16.5.0"
   }
 }
