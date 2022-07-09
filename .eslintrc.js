@@ -4,7 +4,13 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ['google', 'prettier'],
+  extends: [
+    'google',
+    'prettier',
+    'plugin:promise/recommended',
+    'eslint-config-prettier',
+    'plugin:node/recommended',
+  ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',

@@ -9,7 +9,8 @@
   },
   "homepage": "https://github.com/anopszetex/graphql-api#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx nodemon --ext js,graphql,json,mjs src/index.js",
+    "start-cannon": "sh bench.sh"
   },
   "repository": {
     "type": "git",
@@ -19,9 +20,13 @@
     "url": "https://github.com/anopszetex/graphql-api/issues"
   },
   "devDependencies": {
+    "autocannon": "^7.9.0",
     "eslint": "^8.19.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
     "prettier": "^2.7.1"
   },
   "dependencies": {
