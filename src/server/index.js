@@ -1,17 +1,30 @@
 import { ApolloServer, gql } from 'apollo-server';
+import { setTimeout } from 'timers/promises';
 
 const typeDefs = gql`
   type Query {
-    hello: String
+    add(x: Int, y: Int): Int
   }
 `;
 
 const resolvers = {
-  Query: { hello: () => 'Hello world!' },
+  Query: {
+    add: async (_, args) => {
+      const { x, y } = args;
+
+      await setTimeout(50);
+
+      return x + y;
+    },
+  },
 };
 
 const startServer = async () => {
-  const server = new ApolloServer({ typeDefs, resolvers });
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    csrfPrevention: true,
+  });
 
   return server;
 };
