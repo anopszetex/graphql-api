@@ -5,6 +5,8 @@ module.exports = {
     node: true,
   },
   extends: [
+    'eslint:recommended',
+    'plugin:import/recommended',
     'google',
     'prettier',
     'plugin:promise/recommended',

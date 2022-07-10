@@ -10,7 +10,9 @@
   "homepage": "https://github.com/anopszetex/graphql-api#readme",
   "scripts": {
     "dev": "npx nodemon --ext js,graphql,json,mjs src/index.js",
-    "start-cannon": "sh bench.sh"
+    "start-cannon": "sh bench.sh",
+    "start": "pm2 start src/index.js",
+    "stop-server": "pm2 kill"
   },
   "repository": {
     "type": "git",
@@ -20,17 +22,24 @@
     "url": "https://github.com/anopszetex/graphql-api/issues"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "autocannon": "^7.9.0",
     "eslint": "^8.19.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.5.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
     "prettier": "^2.7.1"
   },
   "dependencies": {
+    "@graphql-tools/load-files": "^6.6.0",
+    "@graphql-tools/merge": "^8.3.0",
     "apollo-server": "^3.9.0",
-    "graphql": "^16.5.0"
+    "fastify": "^4.2.0",
+    "graphql": "^16.5.0",
+    "mercurius": "^10.1.0",
+    "pm2": "^5.2.0"
   }
 }

@@ -9,3 +9,6 @@ bracketSameLine: false
 arrowParens: avoid
 htmlWhitespaceSensitivity: ignore
 endOfLine: lf
+importOrder: ['^@core/(.*)$', '^@server/(.*)$', '^@ui/(.*)$', '^[./]']
+importOrderSeparation: true
+importOrderSortSpecifiers: true

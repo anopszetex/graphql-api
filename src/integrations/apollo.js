@@ -3,7 +3,7 @@ import { ApolloServer } from 'apollo-server';
 import { buildResolvers } from './resolvers.js';
 import { buildTypeDefs } from './typeDefs.js';
 
-const startServer = async () => {
+const buildServer = async () => {
   const [typeDefs, resolvers] = await Promise.all([
     buildTypeDefs(),
     buildResolvers(),
@@ -16,4 +16,4 @@ const startServer = async () => {
   });
 };
 
-export { startServer };
+export { buildServer };
