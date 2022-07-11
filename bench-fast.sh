@@ -1,4 +1,4 @@
-URL='http://localhost:4500/graphql'
+URL='http://127.0.0.1:3718/graphql'
 npx autocannon $URL -m POST \
   --headers 'Content-Type: application/json' \
   --body '{"query":"query {\n\tuser(id: 1) {\n\t\tid\n\t\tname\n\t\temail\n\t}\n}"}' \
