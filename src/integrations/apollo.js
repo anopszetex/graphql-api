@@ -1,7 +1,7 @@
 import { ApolloServer } from 'apollo-server';
 
-import { buildResolvers } from './resolvers.js';
-import { buildTypeDefs } from './typeDefs.js';
+import { buildResolvers } from './../server/resolvers.js';
+import { buildTypeDefs } from './../server/typeDefs.js';
 
 const buildServer = async () => {
   const [typeDefs, resolvers] = await Promise.all([

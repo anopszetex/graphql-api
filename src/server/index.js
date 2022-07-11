@@ -1,19 +1,8 @@
-import { ApolloServer } from 'apollo-server';
+import { apolloAdapter } from './../adapter/apolloAdapter.js';
+import { fastifyAdapter } from './../adapter/fastifyAdapter.js';
 
-import { buildResolvers } from './resolvers.js';
-import { buildTypeDefs } from './typeDefs.js';
+const servers = [apolloAdapter, fastifyAdapter];
 
-const startServer = async () => {
-  const [typeDefs, resolvers] = await Promise.all([
-    buildTypeDefs(),
-    buildResolvers(),
-  ]);
-
-  return new ApolloServer({
-    typeDefs,
-    resolvers,
-    csrfPrevention: true,
-  });
-};
+const startServer = servers[1];
 
 export { startServer };

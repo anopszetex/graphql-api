@@ -1,5 +1,7 @@
 import { buildServer } from './../integrations/apollo.js';
 
-export async function startServer() {
+const apolloAdapter = async () => {
   return buildServer();
-}
+};
+
+export { apolloAdapter };
