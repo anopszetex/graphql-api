@@ -18,16 +18,16 @@ const buildServer = async () => {
   app.register(mercurius, {
     schema,
     jit: 1,
-    graphiql: true,
-    context: () => {
-      return {};
-    },
   });
 
   return {
     listen: async port => {
-      const url = await app.listen({ port });
-      return { url };
+      await app.listen({ port });
+
+      return { url: `http://localhost:${port}/graphql` };
+    },
+    stop: async () => {
+      return app.close();
     },
   };
 };

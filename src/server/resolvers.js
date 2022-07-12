@@ -2,7 +2,7 @@ import { loadFiles } from '@graphql-tools/load-files';
 import { mergeResolvers } from '@graphql-tools/merge';
 import path from 'node:path';
 
-import { __dirname } from '../tools/filename.js';
+import { __dirname } from '../support/dirname.js';
 
 const buildResolvers = async () => {
   const resolversArray = await loadFiles(

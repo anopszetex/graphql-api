@@ -9,11 +9,23 @@ const buildServer = async () => {
     buildResolvers(),
   ]);
 
-  return new ApolloServer({
+  const server = new ApolloServer({
     typeDefs,
     resolvers,
     csrfPrevention: true,
+    cache: 'bounded',
   });
+
+  return {
+    listen: async port => {
+      await server.listen({ port });
+
+      return { url: `http://localhost:${port}/graphql` };
+    },
+    stop: async () => {
+      return server.stop();
+    },
+  };
 };
 
 export { buildServer };
